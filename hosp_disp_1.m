@@ -1,6 +1,6 @@
-cases_0 = [ones(1,20)*8000,zeros(1,20)];
-cases_1 = [zeros(1,20),8000,zeros(1,19)];
-cases_2 = [zeros(1,21),8000*ones(1,19)];
+cases_0 = [ones(1,20)*100,zeros(1,20)];
+cases_1 = [zeros(1,20),100,zeros(1,19)];
+cases_2 = [zeros(1,21),100*ones(1,19)];
 norm = 0.5*norm_dist(1:20,10,2);
 hospitalisations_0 = conv(cases_0, norm);
 hospitalisations_1 = conv(cases_1, norm);
