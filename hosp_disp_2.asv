@@ -1,0 +1,17 @@
+cases = round(10*logspace(0,((40-1)/double_time_nu)*log10(2), N));
+cases_0 = [ones(1,20)*100,zeros(1,20)];
+cases_1 = [zeros(1,20),100,zeros(1,19)];
+cases_2 = [zeros(1,21),100*ones(1,19)];
+norm = 0.5*norm_dist(1:20,10,2);
+hospitalisations_0 = conv(cases_0, norm);
+hospitalisations_1 = conv(cases_1, norm);
+hospitalisations_2 = conv(cases_2, norm);
+hosp = [hospitalisations_0;hospitalisations_1;hospitalisations_2]';
+b=bar(hosp(21:40,:), 'stacked');
+b(1).FaceColor=[1,0,0];
+b(2).FaceColor=[0,0,1];
+b(3).FaceColor=[1,0,0];
+legend("Hospitalisations due to previous days","Hospitalisations due to day zero","Hospitalisations due to days ahead of day zero");
+xlabel("Day")
+ylabel("Hospitalisations")
+title("Hospitalisations per day when cases are not growing")
